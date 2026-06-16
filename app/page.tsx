@@ -24,9 +24,12 @@ function NavBar() {
           <a href="#how" className="hover:text-foreground">How it works</a>
         </nav>
 
-        <button className="bg-accent text-accent-foreground rounded-lg px-[18px] py-2.5 text-sm font-medium">
+        <a
+          href="https://estimator-pro-pearl.vercel.app"
+          className="bg-accent text-accent-foreground rounded-lg px-[18px] py-2.5 text-sm font-medium"
+        >
           Get started
-        </button>
+        </a>
       </div>
     </header>
   );
@@ -81,9 +84,12 @@ function Hero() {
           bathroom remodels using real local pricing — so your numbers hold up.
         </p>
         <div className="flex gap-3 mt-7">
-          <button className="bg-accent text-accent-foreground rounded-lg px-[22px] py-3 text-[15px] font-medium flex items-center gap-2">
+          <a
+            href="https://estimator-pro-pearl.vercel.app"
+            className="bg-accent text-accent-foreground rounded-lg px-[22px] py-3 text-[15px] font-medium flex items-center gap-2"
+          >
             Try for free <ArrowRight size={16} />
-          </button>
+          </a>
           <button className="bg-card text-foreground border border-border rounded-lg px-[22px] py-3 text-[15px] font-medium">
             Watch demo
           </button>
@@ -154,6 +160,7 @@ function Pricing() {
       desc: "For solo contractors who want fast, accurate estimates.",
       features: ["Unlimited estimates", "Roof, flooring, kitchen, bathroom", "Local pricing data", "Email support"],
       highlighted: false,
+      href: "https://estimator-pro-pearl.vercel.app",
     },
     {
       name: "Pro",
@@ -161,6 +168,7 @@ function Pricing() {
       desc: "For contractors who want to go from estimate to signed contract.",
       features: ["Everything in Starter", "Auto-generated contracts", "E-signature workflow", "Priority support"],
       highlighted: true,
+      href: "https://estimator-pro-pearl.vercel.app",
     },
   ];
 
@@ -195,15 +203,16 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <button
-                className={`w-full rounded-lg py-2.5 text-sm font-medium ${
+              <a
+                href={plan.href}
+                className={`w-full rounded-lg py-2.5 text-sm font-medium text-center block ${
                   plan.highlighted
                     ? "bg-accent text-accent-foreground"
                     : "bg-card text-foreground border border-border"
                 }`}
               >
                 Choose {plan.name}
-              </button>
+              </a>
             </div>
           </div>
         ))}
